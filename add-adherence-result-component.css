@@ -1,0 +1,82 @@
+:host {
+  display: block;
+}
+
+.add-result-page {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.page-title {
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #d8d8d8;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  max-width: 36rem;
+}
+
+.form-group {
+  margin: 0 0 1rem;
+  border: 0;
+  padding: 0;
+}
+
+.result-type-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.radio-option {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type='text'],
+input[type='date'] {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.validation-message {
+  margin: 0.5rem 0 0;
+  color: #b00020;
+  font-size: 0.875rem;
+}
+
+.submit-btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #0033a1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #002a82;
+}
+
+.error-message {
+    color: #d13438;
+    background-color: #fde7e9;
+    border-left: 4px solid #d13438;
+    padding: 8px 12px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
