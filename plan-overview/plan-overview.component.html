@@ -1,0 +1,49 @@
+<main class="rl-l-container plan-overview-page" *ngIf="planOverview$ | async as plan">
+  <h1 class="page-title">Plan Overview</h1>
+
+  <section class="card summary-card" aria-label="Plan details">
+    <div class="summary-grid">
+      <div>
+        <p class="meta-label">Name of Life Assured</p>
+        <p class="meta-value">{{ plan.lifeAssuredName }}</p>
+      </div>
+      <div>
+        <p class="meta-label">Policy Number</p>
+        <p class="meta-value">{{ plan.policyNumber }}</p>
+      </div>
+      <div>
+        <p class="meta-label">Policy Start Date</p>
+        <p class="meta-value">{{ plan.policyStartDate | date:'d MMM yyyy' }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card history-card" aria-label="A1c History">
+    <h2>A1c History</h2>
+
+    <div class="table-wrapper">
+      <table class="a1c-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Result Type</th>
+            <th scope="col">Result</th>
+            <th scope="col">Premium Adjustment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of plan.a1cHistory">
+            <td>{{ entry.date | date:'d MMM yyyy' }}</td>
+            <td>{{ entry.resultType }}</td>
+            <td>{{ entry.result }}</td>
+            <td>{{ entry.premiumAdjustment }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button type="button" class="add-result-btn" (click)="onAddNewResult()">
+      Add New Adherence Result
+    </button>
+  </section>
+</main>
