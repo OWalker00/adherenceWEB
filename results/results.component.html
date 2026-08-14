@@ -1,0 +1,40 @@
+<main class="rl-l-container results-page">
+  <h1 class="page-title">Results</h1>
+
+  <section class="card summary-card" aria-label="Adherence results summary">
+    <div class="summary-grid">
+      <div>
+        <p class="meta-label">Original HbA1c</p>
+        <p class="meta-value">{{ getOriginalHbA1c() }}</p>
+      </div>
+      <div>
+        <p class="meta-label">Previous HbA1c</p>
+        <p class="meta-value">{{ getPreviousHbA1c() }}</p>
+      </div>
+      <div>
+        <p class="meta-label">Current HbA1c</p>
+        <p class="meta-value">{{ summary.currentHbA1c }}</p>
+      </div>
+      <div class="summary-divider"></div>
+      <div>
+        <p class="meta-value">New Total Premium Adjustment: {{ summary.newTotalPremiumAdjustment }}</p>
+        <p class="meta-value">New Total Reinsurance Adjustment: {{ summary.newTotalReinsuranceAdjustment }}</p>
+        <p class="meta-value">{{ summary.outcome }}</p>
+        <div class="summary-divider"></div>
+        <p class="meta-label">Next Adherence Due Date</p>
+        <p class="meta-value">{{ summary.nextAdherenceDueDate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card actions-card" aria-label="Result actions">
+    <div class="action-row">
+      <button type="button" class="primary-btn" (click)="onConfirm()">
+        Confirm
+      </button>
+      `
+
+      <button type="button" class="back-btn" (click)="onBack()">Back</button>
+    </div>
+  </section>
+</main>
