@@ -1,0 +1,86 @@
+:host {
+  display: block;
+}
+
+.plan-overview-page {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.page-title {
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid #d8d8d8;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.meta-label {
+  margin: 0;
+  color: #5a5a5a;
+  font-size: 0.875rem;
+}
+
+.meta-value {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+}
+
+.history-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.a1c-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 34rem;
+}
+
+.a1c-table th,
+.a1c-table td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.a1c-table thead th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.add-result-btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #0033a1;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-result-btn:hover {
+  background: #002a82;
+}
+
+@media (max-width: 768px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
