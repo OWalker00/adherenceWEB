@@ -1,0 +1,20 @@
+<main class="rl-l-container">
+  <h1>Plan lookup</h1>
+
+  <form (ngSubmit)="onSearch()" #planLookupForm="ngForm" novalidate>
+    <label for="planNumber">Plan number</label>
+<input
+  id="planNumber"
+  name="planNumber"
+  type="text"
+  [(ngModel)]="planNumber"
+  autocomplete="off"
+/>
+
+<p *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</p>
+
+<button type="submit">Search</button>
+  </form>
+</main>
