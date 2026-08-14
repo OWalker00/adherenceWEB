@@ -1,0 +1,61 @@
+<main class="rl-l-container add-result-page">
+  <h1 class="page-title">Add New Adherence Result</h1>
+
+  <section class="card" aria-label="Add adherence result form">
+    <form (ngSubmit)="onSubmit(resultForm)" #resultForm="ngForm" novalidate>
+      <fieldset class="form-group result-type-group">
+        <legend class="form-label">Select an adherence result type</legend>
+
+        <label class="radio-option" for="resultTypePercent">
+          <input id="resultTypePercent" type="radio" name="resultType" [(ngModel)]="resultType" [value]="'percent'"
+            required (change)="onResultTypeChange()" />
+          HbA1c % result
+        </label>
+
+        <label class="radio-option" for="resultTypeMmol">
+          <input id="resultTypeMmol" type="radio" name="resultType" [(ngModel)]="resultType" [value]="'mmol'"
+            (change)="onResultTypeChange()" />
+          HbA1c mmol/mol result
+        </label>
+
+        <label class="radio-option" for="resultTypeNone">
+          <input id="resultTypeNone" type="radio" name="resultType" [(ngModel)]="resultType" [value]="'none'"
+            (change)="onResultTypeChange()" />
+          No result
+        </label>
+
+        <p class="validation-message" *ngIf="hasControlError(resultForm, 'resultType', 'required')">
+          Select an adherence result type.
+        </p>
+      </fieldset>
+
+      <div class="form-group">
+        <label class="form-label" for="testResult">Test Result</label>
+        <input id="testResult" name="testResult" type="text" [(ngModel)]="testResult" [required]="resultType !== 'none'"
+          [disabled]="resultType === 'none'" autocomplete="off" />
+        <p class="validation-message"
+          *ngIf="resultType !== 'none' && hasControlError(resultForm, 'testResult', 'required')">
+          Enter a test result.
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="testDate">Test Date</label>
+        <input id="testDate" name="testDate" type="date" [(ngModel)]="testDate" [max]="maxDate" required
+          (ngModelChange)="onTestDateChange(resultForm)" />
+        <p class="validation-message" *ngIf="hasControlError(resultForm, 'testDate', 'required')">
+          Enter a test date.
+        </p>
+        <p class="validation-message" *ngIf="hasControlError(resultForm, 'testDate', 'futureDate')">
+          Test date cannot be a future date.
+        </p>
+      </div>
+
+      <p *ngIf="validationMessage" class="error-message">
+        {{ validationMessage }}
+      </p>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </section>
+</main>
